@@ -1,0 +1,46 @@
+@import "../../breakpoints.scss";
+.cancel {
+  min-height: 80vh;
+  display: flex;
+  &__card-section {
+    width: 90vw;
+    margin: auto;
+    background-color: #dcdcdc;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    @include mediaQuery("md") {
+      width: 20vw;
+      padding: 40px;
+    }
+
+    &__icon {
+      color: red;
+      font-size: 40px;
+    }
+    h2 {
+      text-transform: capitalize;
+      margin: 10px;
+      font-weight: 600;
+      font-size: 1.3rem;
+      color: #324d67;
+    }
+    .btn {
+      margin-top: 0.5rem;
+      padding: 0.8rem 1.5rem;
+      border: 0;
+      background-color: #f02d34;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.5s ease;
+      &:hover,
+      :focus {
+        background: #d1272d;
+      }
+    }
+  }
+}

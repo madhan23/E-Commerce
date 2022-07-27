@@ -1,0 +1,31 @@
+.product {
+  cursor: pointer;
+  transition: transform 0.8s ease-out;
+  color: #324d67;
+  min-height: 250px;
+  max-width: 250px;
+  border-radius: 5px;
+  border: 1px solid #ebebeb;
+  &:hover {
+    transform: scale(1.1);
+  }
+  &__image {
+    max-height: 150px;
+    object-fit: contain;
+    background: #ebebeb;
+  }
+
+  &__desc {
+    padding: 0.5rem 1rem;
+
+    &--name {
+      font-size: 0.9rem;
+      word-wrap: break-word;
+    }
+    &--price {
+      font-weight: 800;
+      margin-top: 6px;
+      font-size: 0.8rem;
+    }
+  }
+}

@@ -1,0 +1,76 @@
+@import "../breakpoints.scss";
+
+.banner {
+  min-height: 400px;
+  background-color: #dcdcdc;
+  .banner__card {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    transition: all 0.4s ease;
+
+    @include mediaQuery("md") {
+      flex-direction: row;
+      max-width: 80vw;
+      margin: 0 auto;
+      gap: 20px;
+    }
+
+    &__desc {
+      padding: 1rem 1.6rem;
+      @include mediaQuery("md") {
+        padding: 5rem 1rem;
+      }
+      h3 {
+        color: #fff;
+        font-size: 1.4rem;
+      }
+      p {
+        color: #324d67;
+        font-weight: 500;
+        font-size: 1rem;
+        margin: 0.5rem 0;
+      }
+
+      button {
+        padding: 10px 16px;
+        background-color: #f02d34;
+        color: white;
+        border: none;
+        font-size: 1rem;
+        transition: transform 0.5s ease;
+        font-weight: 500;
+        cursor: pointer;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+
+      @include mediaQuery("md") {
+        h3 {
+          font-size: 2.4rem;
+        }
+        p {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    &__image {
+      display: flex;
+      place-content: center;
+      img {
+        height: 300px;
+        width: 250px;
+        object-fit: contain;
+      }
+
+      @include mediaQuery("md") {
+        img {
+          height: 400px;
+          width: 350px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,89 @@
+@import "../../breakpoints.scss";
+
+.register {
+  margin-top: 3rem;
+  color: #3c4257;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  &__section {
+    width: 90vw;
+    margin-top: 1rem;
+    padding: 1.4rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    &__form {
+      .text-blk {
+        margin: 1rem 0;
+      }
+      .error {
+        color: red;
+      }
+
+      .login-link {
+        margin-top: 1rem;
+        text-align: center;
+        & > a {
+          color: #635bff;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    @include mediaQuery("md") {
+      width: 60vw;
+      &__form {
+        padding: 1rem 1.5rem;
+      }
+    }
+
+    @include mediaQuery("lg") {
+      width: 35vw;
+      &__form {
+        padding: 1rem 2.5rem;
+      }
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    input {
+      width: 100%;
+      height: 3rem;
+      margin: 0.5rem 0;
+      padding: 0 1.1rem;
+      background: transparent;
+      border: 1px solid rgb(135, 146, 162);
+    }
+
+    button {
+      display: block;
+      margin-top: 1.5rem;
+      outline: none;
+      border: none;
+      color: #fff;
+      width: 100%;
+      height: 3rem;
+      font-size: inherit;
+      background-color: #635bff;
+      padding: 0.7rem 2.5rem;
+      transition: all 0.4s ease;
+
+      &:hover:not(:disabled) {
+        opacity: 0.9;
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: rgb(235, 228, 221) 0 0 0 2px;
+      }
+
+      &:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+      }
+    }
+  }
+}

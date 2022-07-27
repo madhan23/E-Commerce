@@ -1,0 +1,41 @@
+.product__section {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  &__text {
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  &__btn {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    button {
+      border-radius: 5px;
+      background-color: #635bff;
+      color: #fff;
+      cursor: pointer;
+      padding: 0.8rem 1.5rem;
+      border: 0;
+      font-weight: 600;
+      transition: all 0.5s ease;
+      &:hover,
+      :focus {
+        background-color: hsl(243, 68%, 68%);
+      }
+    }
+  }
+
+  &__status-info {
+    text-align: center;
+    margin-top: 0.5rem;
+    font-weight: 600;
+  }
+  &__card {
+    padding: 1rem;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+  }
+}
