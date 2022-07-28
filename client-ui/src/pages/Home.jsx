@@ -14,7 +14,7 @@ const Home = () => {
   useEffect(() => {
     dispatch(getProductList({ page: 1, limit: 5 }));
     if (username) dispatch(getCartData());
-  }, [dispatch]);
+  }, [dispatch, username]);
   return (
     <div>
       <Banner />

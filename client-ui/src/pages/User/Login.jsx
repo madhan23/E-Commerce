@@ -73,7 +73,7 @@ const Login = () => {
         );
       })
       .catch((err) => {
-        toast.error(error);
+        toast.error(err);
       });
   };
   return (

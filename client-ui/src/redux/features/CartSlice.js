@@ -145,6 +145,7 @@ const cartSlice = createSlice({
           if (product.pid === pid) {
             product.quantity = product.quantity + 1;
           }
+          return product;
         });
         state.total += product.price;
       } else {
@@ -152,6 +153,7 @@ const cartSlice = createSlice({
           if (product.pid === pid) {
             product.quantity = product.quantity - 1;
           }
+          return product;
         });
         state.total -= product.price;
       }
