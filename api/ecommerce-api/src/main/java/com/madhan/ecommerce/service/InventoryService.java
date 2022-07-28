@@ -42,7 +42,8 @@ public class InventoryService {
     @Autowired
     MongoTemplate mongoTemplate;
 
-    public ProductResponse getAllProducts(String page, String limit, String categories, String size, String sortBy,
+    @SuppressWarnings("unchecked")
+	public ProductResponse getAllProducts(String page, String limit, String categories, String size, String sortBy,
                                           String orderBy) {
 
         Query query = new Query();

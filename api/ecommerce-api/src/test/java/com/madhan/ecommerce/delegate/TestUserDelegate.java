@@ -51,8 +51,7 @@ public class TestUserDelegate {
 		}
 
 	}
-	
-	
+
 	@Test
 	public void testSignUpForInvalidPassword() {
 		User user = new User();
@@ -66,8 +65,7 @@ public class TestUserDelegate {
 		}
 
 	}
-	
-	
+
 	@Test
 	public void testSignUpForInvalidEmail() {
 		User user = new User();
@@ -83,37 +81,34 @@ public class TestUserDelegate {
 
 	}
 
-
-	
 	@Test
 	public void testGetUser() {
 		Mockito.doNothing().when(jwt).authorizeRequest(Mockito.anyString());
 		Mockito.when(userService.getUser(Mockito.anyString())).thenReturn(getUserObj());
-		User user = userDelegate.getUser(UUID.randomUUID().toString(),"Berer Token");
+		User user = userDelegate.getUser(UUID.randomUUID().toString(), "Berer Token");
 		assertEquals("test@gmail.com", user.getEmail());
 	}
-	
-	
+
 	@Test
 	public void testLogin() throws JsonProcessingException {
-		UserLogin request = new UserLogin("test@gmail.com","pasword");
+		UserLogin request = new UserLogin("test@gmail.com", "pasword");
 		Mockito.when(userService.userLogin(Mockito.any(UserLogin.class))).thenReturn(getUserObj());
 		Mockito.when(mapper.writeValueAsString(Mockito.any())).thenReturn("");
 		Mockito.when(jwt.generateJWTToken(Mockito.anyString())).thenReturn("etyujhjGHJ");
 		UserResponse data = userDelegate.login(request);
 		assertEquals("test@gmail.com", data.getEmailId());
 		assertEquals("etyujhjGHJ", data.getAccessToken());
-		
+
 	}
-	
+
 	private User getUserObj() {
 		User user = new User();
 		user.setId(UUID.randomUUID().toString());
 		user.setEmail("test@gmail.com");
 		user.setUsername("Test");
 		user.setPassword("pasword");
+		user.setIsAdmin(false);
 		user.setCreatedAt(LocalDateTime.now());
-
 		return user;
 	}
 }

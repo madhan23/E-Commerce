@@ -58,7 +58,7 @@ public class OrderDelegator {
 	public Response updateOrder(OrderInfoDto  orderInfo) {
 		String orderId = orderInfo.getOrderId();
 		String paymentId = orderInfo.getPaymentId();
-		if (orderId == null || orderId.isBlank()) {
+		if (orderId == null || orderId.isEmpty()) {
 			throw new InvalidRequestDataException("OrderId should not be null or empty");
 		}
 
