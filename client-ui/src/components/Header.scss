@@ -1,9 +1,8 @@
+@use "../mixins" as *;
 .navbar {
   padding: 0.5rem 2rem;
   background-color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flexBox(space-between, center);
   position: fixed;
   z-index: 999;
   top: 0;
@@ -11,9 +10,7 @@
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
   &__logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexBox(center, center);
     gap: 5px;
     font-size: 1.1rem;
     font-weight: 600;
@@ -22,19 +19,15 @@
     }
   }
   &__menu {
-    display: flex;
     gap: 3rem;
-    justify-content: flex-end;
-    align-items: center;
+    @include flexBox(flex-end, center);
 
     &__user {
       position: relative;
 
       &-info {
-        display: flex;
+        @include flexBox(center, center);
         cursor: pointer;
-        justify-content: center;
-        align-items: center;
         width: 30px;
         height: 30px;
         color: #fff;
@@ -76,9 +69,7 @@
       position: relative;
       &-icon {
         font-size: 30px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexBox(center, center);
         color: gray;
         border: transparent;
         cursor: pointer;

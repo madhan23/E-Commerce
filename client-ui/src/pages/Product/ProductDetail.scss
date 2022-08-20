@@ -1,16 +1,16 @@
-@import "../../breakpoints.scss";
+@use "../../mixins" as *;
 
-.textSection {
+.status-info {
   text-align: center;
   margin-top: 2rem;
   font-weight: 600;
 }
 
 .product-detail-container {
-  margin-top: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  padding: 1rem 2rem;
+  @include flexBox(flex-start, flex-start, column);
+  padding-top: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   color: #324d67;
 
   @include mediaQuery("md") {
@@ -92,12 +92,10 @@
     }
     .select-product-color {
       margin-top: 1rem;
-      display: flex;
-      align-items: center;
+      @include flexBox(flex-start, center);
 
       .colorItemList {
-        display: flex;
-        align-items: center;
+        @include flexBox(flex-start, center);
         gap: 10px;
 
         span {

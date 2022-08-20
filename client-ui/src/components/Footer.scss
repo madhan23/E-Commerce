@@ -1,3 +1,5 @@
+@use "../mixins" as *;
+
 .footer {
   background-color: #232f3e;
   color: #ddd;
@@ -5,11 +7,8 @@
   margin-top: 20px;
   padding: 1rem;
   font-weight: 600;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flexBox(center, center, column);
   gap: 10px;
-  justify-content: center;
 
   &__icon-section {
     display: flex;
@@ -18,7 +17,7 @@
 
   &__icon {
     transition: all ease;
-    font-size: 30px;
+    font-size: 23px;
     cursor: pointer;
     transition: transform 0.5s ease;
     &:hover {

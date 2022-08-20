@@ -1,4 +1,4 @@
-@import "../../breakpoints.scss";
+@use "../../mixins" as *;
 .cart {
   width: 100vw;
   background: rgba(0, 0, 0, 0.5);
@@ -6,7 +6,6 @@
   right: 0;
   top: 0;
   z-index: 100;
-  /* will-change: transform; */
   transition: all 0.4s ease-in-out;
 
   &__section {
@@ -22,8 +21,7 @@
     }
 
     &__icon {
-      display: flex;
-      align-items: center;
+      @include flexBox(center, center);
       font-size: 1rem;
       font-weight: 500;
       cursor: pointer;
@@ -66,8 +64,7 @@
     max-height: 80vh;
 
     &__info {
-      display: flex;
-      flex-direction: column;
+      @include flexBox(center, center, column);
       margin-bottom: 1rem;
       padding-left: 5px;
       padding-bottom: 25px;
@@ -105,9 +102,7 @@
 
     &__quantity {
       margin-top: 1rem;
-      display: flex;
-      justify-content: space-between;
-
+      @include flexBox(space-between, center);
       &__desc {
         max-width: 130px;
         height: 40px;
@@ -161,10 +156,7 @@
     }
     @include mediaQuery("md") {
       width: auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      @include flexBox(center, center, column);
     }
   }
 

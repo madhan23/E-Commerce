@@ -1,5 +1,4 @@
-@import "../breakpoints.scss";
-
+@use "../mixins" as *;
 .banner {
   min-height: 400px;
   background-color: #dcdcdc;

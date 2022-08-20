@@ -2,6 +2,7 @@ import "./index.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import Layout from "./components/Layout";
+import NetworkDetector from "./components/NetworkDetector";
 import Home from "./pages/Home";
 import ProductDetail from "./pages/Product/ProductDetail";
 import Login from "./pages/User/Login";
@@ -31,5 +32,4 @@ function App() {
     </BrowserRouter>
   );
 }
-
-export default App;
+export default NetworkDetector(App);

@@ -77,7 +77,7 @@ const ProductDetail = () => {
   return (
     <div>
       {loading || error ? (
-        <div className='textSection'>
+        <div className='status-info'>
           {loading && <span>Loading...</span>}
           {error && <span>{error}</span>}
         </div>

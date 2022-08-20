@@ -1,4 +1,4 @@
-@import "../../breakpoints.scss";
+@use "../../mixins" as *;
 .success {
   min-height: 80vh;
   display: flex;
@@ -8,11 +8,7 @@
     background-color: #dcdcdc;
     padding: 20px;
     border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
+    @include flexBox(center, center, column);
     @include mediaQuery("md") {
       width: 50vw;
       padding: 40px;

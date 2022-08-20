@@ -1,4 +1,4 @@
-@import "../../breakpoints.scss";
+@use "../../mixins" as *;
 
 .register {
   margin-top: 3rem;
